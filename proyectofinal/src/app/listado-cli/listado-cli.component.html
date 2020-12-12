@@ -1,0 +1,24 @@
+<div class="container mt-3">
+    <h4>Listado de clientes</h4>
+    <form>
+        <div class="form-group">
+          <input class="form-control" type="email" class="form-control" id="exampleInputEmail1" placeholder="Busque un cliente" aria-describedby="emailHelp" placeholder="Enter email">
+        </div>
+      </form>
+    <div class="row mt-5">
+        <div class="col-sm-3" *ngFor="let cl of clientes">
+
+            <div class="card" style="width: 18rem;">
+                <img class="card-img-top" class="img-cli" [src]="cl.imgurl" alt="Card image cap">
+                <div class="card-body">
+                  <h5 class="card-title">{{cl.nombre}} {{cl.apellido}}</h5>
+                  <div class="card-body">
+                    <a [routerLink]="['/agregar-cli/',cl.id]" class="card-link">Editar</a>
+                    <a href="#" class="card-link">Eliminar</a>
+                  </div>
+                </div>
+              </div>
+
+        </div>
+    </div>
+</div>

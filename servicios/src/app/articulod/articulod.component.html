@@ -1,0 +1,10 @@
+<div class="container">
+    <div class="articulo">
+        <h4>{{art.artic.nombre | uppercase}}</h4>
+        <p>{{art.artic.descripcion}}</p>
+        <p>{{art.artic.precio}}</p>
+        <p *ngIf="art.artic.peso>0">{{art.artic.peso}}</p>
+        <p>{{art.artic.usuario}}</p>
+        <p>{{art.artic.fecha | date}}</p>
+    </div>
+</div>

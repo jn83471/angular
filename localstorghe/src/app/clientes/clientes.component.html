@@ -1,0 +1,15 @@
+<button type="button" class="btn btn-primary" (click)="guardarcliente()">Guardar</button>
+<button type="button" class="btn btn-primary" (click)="eliminar()">eliminar</button>
+<button type="button" class="btn btn-danger" (click)="eliminartodo()">eliminar todo</button>
+
+<div class="container">
+    <div *ngFor="let client of clienteslocales">
+        <p>Nombre: {{client.nombre}}</p>
+        <p>Edad: {{client.edad}}</p>
+    </div>
+
+    <div style="margin-top: 5vh;" *ngFor="let pro of productoslocaes">
+        <p>Nombre: {{pro.nombre}}</p>
+        <p>Edad: {{pro.presio | currency:'$'}}</p>
+    </div>
+</div>

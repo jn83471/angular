@@ -1,0 +1,49 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">mastergim</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" routerLink="/">Inscripciones <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="#">Ver inscripciones <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item dropdown" dropdown>
+                <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown"
+                    aria-haspopup="true" aria-controls="navbarDropdown" aria-expanded="false" dropdownToggle>
+                    Clientes
+                </a>
+                <div class="dropdown-menu" *dropdownMenu aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" routerLink="agregar-cli">Agregar clientes</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="clientes">Ver clietes</a>
+                    
+                </div>  
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" routerLink="precios">precios <span class="sr-only">(current)</span></a>
+            </li>
+              <li class="nav-item dropdown" dropdown>
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" dropdownToggle>
+                  subscripciones
+                </a>
+                <div class="dropdown-menu" *dropdownMenu aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="#">Subscripciones diarias</a>
+                    <a class="dropdown-item" href="#">Subscripciones mensuales</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="#">Más vendidas</a>
+                </div>
+              </li>
+              <li class="nav-item active">
+                <a class="nav-link" (click)="logout()">Salir <span class="sr-only">(current)</span></a>
+            </li>
+            
+            
+        </ul>
+    </div>
+</nav>

@@ -1,0 +1,16 @@
+<!--<p>titulos works!</p>
+<h1>hola soy un {{nombre}}</h1>
+
+<br>
+{{ alumno.nombres }}
+
+<img [src]="img">
+<input name="form" [(ngModel)]="parafo">
+<p>{{parafo}}</p>-->
+<label for="user">username</label>
+<input type="text" name="" id="user" [(ngModel)]="user">
+<label for="password">password</label>
+<input type="password" (keydown)="ing($event)" name=""(input)="valus($event)" id="password" [(ngModel)]="pass">
+<button (click)="ingresar()">enviar</button>
+<p>{{user}}</p>
+<p>{{pass}}</p>

@@ -1,0 +1,12 @@
+<div class=" container">
+    asdsa
+    <form [formGroup]="formulariocreado">
+        <div class="form-group">
+            <label for="titulo">titulo</label>
+            <input type="text" class="form-control" formControlName="title">
+            <label for="titulo">titulo</label>
+            <input type="checkbox" class="form-control" formControlName="completed" id="completed">
+        </div>
+        <button type="button" class="btn btn-danger" [disabled]="!formulariocreado.valid" (click)="agregar()">Danger</button>
+    </form>
+</div>

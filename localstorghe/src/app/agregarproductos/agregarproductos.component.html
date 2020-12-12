@@ -1,0 +1,13 @@
+<div class="container">
+    <form action="" [formGroup]="formulario">
+        <div class="form-group">
+           <label for="nombre">nombre</label>
+           <input type="text" formControlName="nombre" class="form-control">
+        </div>
+       <div class="form-group">
+           <label for="presio">presio</label>
+           <input type="number" formControlName="presio" class="form-control">
+       </div>
+       <button type="button" class="btn btn-primary" (click)="agregar()" [disabled]="!formulario.valid">agregar productos</button>
+    </form>
+   </div>

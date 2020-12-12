@@ -1,0 +1,48 @@
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-sm-8">
+            <h4>precios</h4>
+            <ul>
+                <div *ngFor="let pr of precios">
+                <li (click)="mandar(pr.id)">
+                    {{pr.nombre}}
+                    <ul>
+                        <li>{{pr.costo}}</li>
+                    </ul>
+                </li>
+                </div>
+            </ul>
+        </div>
+        <div class="col-sm-4">
+            <h4>agregar o editar precios</h4>
+            <form action="" [formGroup]="formulario">
+                <div class="form-group">
+                    <label for="nombre">nombre</label>
+                    <input class="form-control" formControlName="nombre" type="text" name="" id="nombre">
+                </div>
+                <div class="form-group">
+                    <label for="costo">costo</label>
+                    <input class="form-control" formControlName="costo" type="number" name="" id="costo">
+                </div>
+                
+                <div class="form-group">
+                    <label for="duracion">duracion</label>
+                    <input class="form-control" formControlName="duracion" type="number" name="" id="duracion">
+                </div>
+                
+                <div class="form-group">
+                    <label for="nombre">tipo duracion</label>
+                    <select name="" id="nombre" formControlName="tipoduracion" class="form-control">
+                        <option value="1">dia</option>
+                        <option value="2">semana</option>
+                        <option value="3">quincena</option>
+                        <option value="4">mes</option>
+                        <option value="5">año</option>
+                    </select>
+                </div>
+                <button type="button" *ngIf="!editara"  class="btn btn-primary" (click)="agregar()" [disabled]="!formulario.valid">Agregar</button>
+                <button type="button" *ngIf="editara" class="btn btn-primary" (click)="editar()"  [disabled]="!formulario.valid">Editar</button>
+            </form>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,31 @@
+<div class="container">
+    <div class="text-center">
+        <img src="assets/emp.jpg" alt="">
+    </div>
+    
+    <form [formGroup]="formulario">
+        <div class="form-group">
+          <label for="exampleInputEmail1">Correo electronico</label>
+          <input type="email" class="form-control" id="exampleInputEmail1" (keyup.Enter)="login()" formControlName="email" aria-describedby="emailHelp" placeholder="ingrese su correo">
+          <div *ngIf="formulario.controls['email'].invalid && formulario.controls['email'].dirty" class="alert alert-danger" role="alert">
+            <span *ngIf="formulario.controls['email'].errors.required">necesita un email</span>
+            <span *ngIf="formulario.controls['email'].errors.email">email no valido</span>
+        </div>
+        </div>
+        <div class="form-group">
+          <label for="exampleInputPassword1">Password</label>
+          <input type="password" class="form-control" (keyup.enter)="login()" id="exampleInputPassword1" formControlName="contra" placeholder="ingrese su contraseña">
+          <div *ngIf="formulario.controls['contra'].invalid && formulario.controls['contra'].dirty" class="alert alert-danger" role="alert">
+            <span *ngIf="formulario.controls['contra'].errors.required">necesita una contraseña</span>
+            <span *ngIf="formulario.controls['contra'].errors.minlength">contraseña no valido</span>
+          </div>
+        </div>
+        <button type="submit" class="btn btn-primary" (click)="login()" [disabled]="!formulario.valid">Submit</button>
+    </form>
+
+    <div *ngIf="valido" class="alert alert-danger" role="alert">
+        {{texto}}
+    </div>
+</div>
+
+<ngx-spinner bdColor = "rgba(0, 0, 0, 0.8)" size = "medium" color = "#fff" type = "ball-spin-clockwise" [fullScreen] = "true"><p style="color: white" > Loading... </p></ngx-spinner>

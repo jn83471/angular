@@ -1,0 +1,24 @@
+<div class="container mt-5">
+    <form action="">
+        <div class="form-group">
+            <label for="nombre">nombre</label>
+            <input type="text" (input)="buscar($event)" routerLinkName="nombre" id="nombre" class="form-control" placeholder="busca un cliente">
+            <button type="button" class="btn btn-primary" routerLink="/agregar-productos">Buscar</button>
+        </div>
+    </form>
+    <div class="row">
+        <div class="col-3" *ngFor="let prod of productos">
+            <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                  <h5 class="card-title">{{prod.nombre}}</h5>
+                  <p class="card-text">{{prod.codigo}}</p>
+                  <p class="card-text">{{prod.presio}}</p>
+                  <a (click)="agregarpedido(prod)" class="card-link btn btn-link">Card link</a>
+                </div>
+            </div>
+        </div>
+        <button type="button" class="btn btn-primary" routerLink="/pedidos" [disabled]="!generarpedido">generar pedido</button>
+        
+    </div>
+    
+</div>

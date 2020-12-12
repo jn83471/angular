@@ -1,0 +1,29 @@
+<div class="container mt-5">
+    <span>Nombre: {{pedido.nombre}}</span>
+    <div class="row">
+            <table class="table table-dark">
+                <thead>
+                  <tr>
+                    <th scope="col">nombre</th>
+                    <th scope="col">cantidad</th>
+                    <th scope="col">presio</th>
+                    <th scope="col">total</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let client of pedido.pedidodetalle; let position=index">
+                    <td>{{client.nonbre}}</td>
+                    <td><input (input)="calcular_total(position)" type="text" [(ngModel)]="client.cantidad"></td>
+                    <td>{{client.presio | currency:'$'}}</td>
+                    <td>{{client.total | currency:'$'}}</td>
+                  </tr>
+                  
+                </tbody>
+              </table>
+            
+        
+    </div>
+    <span>Total: {{pedido.total}}</span>
+    <button type="button" class="btn btn-primary" (click)="guardar()">agregarclientes</button>
+
+</div>

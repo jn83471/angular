@@ -1,0 +1,8 @@
+<div class="container">
+    <div class="artic" *ngFor="let articulo of artic">
+        <h4>{{articulo.nombre}}</h4>
+        <p>{{articulo.descripcion}}</p>
+        <h5>{{articulo.presio | currency:'$'}}</h5>
+        <button type="button" class="btn btn-danger" (click)="enviar(articulo)">agregar</button>
+    </div>
+</div>

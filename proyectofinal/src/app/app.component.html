@@ -1,0 +1,15 @@
+<div *ngIf="usuario ; else showLogin">
+  <app-encabezado></app-encabezado>
+  
+  <router-outlet></router-outlet>
+</div>
+<ng-template #showLogin>
+  <div class="text-center" *ngIf="cargando;else show">
+    <div class="lds-ripple"><div></div><div></div></div>
+  </div>
+  <ng-template #show>
+    <app-login ></app-login>
+  </ng-template>
+  
+</ng-template>
+

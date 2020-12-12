@@ -1,0 +1,41 @@
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-5">
+            <h6 class="text-center">
+                Crear tarjeta
+            </h6>
+            <form [formGroup]="formularop">
+                <div class="input-group mt-5">
+                    <input class="form-control" type="text"  formControlName="titular" name="titular" placeholder="titular" aria-label="titular " aria-describedby="titular">
+                    <div class="input-group-append">
+                        <span class="input-group-text" id="my-addon">titular</span>
+                    </div>
+                </div>
+
+                <div class="input-group mt-5" >
+                    <input class="form-control" type="text" formControlName="numerotarjeta" name="numerotarjeta" placeholder="numerotarjeta" aria-label="numerotarjeta " aria-describedby="numerotarjeta">
+                    <div class="input-group-append">
+                        <span class="input-group-text" id="my-addon">Numero tarjeta</span>
+                    </div>
+                </div>
+
+                <div class="input-group mt-5" >
+                    <input class="form-control" type="date" formControlName="fecha_expiracion" name="fecha_expiracion" placeholder="Fecha expiracion" aria-label="Fecha expiracion" aria-describedby="Fecha expiracion">
+                    <div class="input-group-append">
+                        <span class="input-group-text" id="my-addon">Fecha expiracion</span>
+                    </div>
+                </div>
+
+                <div class="input-group mt-5" >
+                    <input class="form-control" type="text" formControlName="cvv" name="cvv" placeholder="cvv" aria-label="cvv " aria-describedby="cvv">
+                    <div class="input-group-append">
+                        <span class="input-group-text" id="my-addon">cvv</span>
+                    </div>
+                </div>
+                <button class="btn btn-primary" (click)="enviar()" [disabled]="!formularop.valid">enviar</button>
+            </form>
+        </div>
+        <div class="col-md-7">
+            <app-listtarjetacredito></app-listtarjetacredito>
+        </div>
+    </div>
